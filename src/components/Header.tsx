@@ -43,8 +43,8 @@ export default function Header({ selectedId, onHome }: HeaderProps) {
 
   return (
     <header
-      className="flex items-center justify-between px-4 md:px-10 h-16 md:h-24 bg-white sticky top-0 z-[40]"
-      style={{ borderBottom: '1px solid rgba(244, 162, 97, 0.24)', boxShadow: '0 2px 20px rgba(45,10,94,0.08)' }}
+      className="flex items-center justify-between px-4 md:px-10 h-16 md:h-24 bg-gradient-to-r from-[#F5F0FF] via-white to-[#F8F4FF] sticky top-0 z-[40]"
+      style={{ borderBottom: '1px solid rgba(155, 93, 229, 0.15)', boxShadow: '0 2px 20px rgba(45,10,94,0.06)' }}
     >
       {/* ── Left: logo + section title ── */}
       <div className="flex items-center gap-2 md:gap-10">

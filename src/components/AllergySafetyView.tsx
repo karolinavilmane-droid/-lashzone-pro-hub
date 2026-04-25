@@ -26,14 +26,14 @@ export default function AllergySafetyView() {
         <div className="flex items-center gap-2 md:gap-3 mb-6 md:mb-10">
           <span
             className="flex items-center gap-2 text-[11px] font-bold text-brand-primary px-3.5 py-1.5 rounded-full"
-            style={{ background: 'rgba(154,126,212,0.12)', border: '1px solid rgba(154,126,212,0.25)' }}
+            style={{ background: 'rgba(244,162,97,0.12)', border: '1px solid rgba(244,162,97,0.25)' }}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-brand-primary inline-block" />
             {freeCount} Free
           </span>
           <span
             className="flex items-center gap-2 text-[11px] font-bold text-brand-accent px-3.5 py-1.5 rounded-full"
-            style={{ background: 'rgba(255,128,80,0.10)', border: '1px solid rgba(255,128,80,0.28)' }}
+            style={{ background: 'rgba(155,93,229,0.10)', border: '1px solid rgba(155,93,229,0.28)' }}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-brand-accent inline-block" />
             {paidCount} Paid

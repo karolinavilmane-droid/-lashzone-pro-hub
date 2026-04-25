@@ -137,10 +137,10 @@ export default function Sidebar({ selectedId, onSelect, onHome }: SidebarProps) 
       {/* Mobile toggle */}
       <button
         onClick={toggleSidebar}
-        className="md:hidden fixed bottom-24 left-4 w-12 h-12 bg-brand-primary text-white rounded-full flex items-center justify-center z-50 transition-all hover:bg-brand-accent active:scale-95"
+        className="md:hidden fixed top-16 right-4 w-10 h-10 bg-brand-accent text-white rounded-xl flex items-center justify-center z-[45] transition-all hover:bg-brand-accent-dark active:scale-95 shadow-brand-md"
         style={{ boxShadow: 'var(--shadow-brand-md)' }}
       >
-        <Menu size={24} />
+        <Menu size={20} />
       </button>
 
       {/* Mobile drawer */}

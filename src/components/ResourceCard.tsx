@@ -52,38 +52,38 @@ export default function ResourceCard({ resource }: { resource: Resource }) {
     ? { label: 'Free',           cls: 'bg-brand-primary text-white' }
     : isUnlocked
       ? { label: 'Access Granted', cls: 'bg-brand-accent text-white' }
-      : { label: 'Locked',         cls: 'bg-[#EDE8F5] text-[#7A6499]' };
+      : { label: 'Locked',         cls: 'bg-[#EDE8F5] text-[#5B3E8A]' };
 
   // ── Card surface ──────────────────────────────────────────────────────────────
   const cardCls = isLocked
     ? [
         'bg-white',
-        'border border-[rgba(154,126,212,0.18)]',
+        'border border-[rgba(155,93,229,0.15)]',
         'shadow-[0_1px_4px_rgba(42,27,74,0.06)]',
         'hover:shadow-[0_4px_18px_rgba(42,27,74,0.10)]',
-        'hover:border-[rgba(154,126,212,0.30)]',
+        'hover:border-[rgba(155,93,229,0.30)]',
       ].join(' ')
     : [
         'bg-white',
-        'border border-[rgba(154,126,212,0.32)]',
+        'border border-[rgba(155,93,229,0.28)]',
         'shadow-brand-sm',
         'hover:shadow-brand-md',
-        'hover:border-[rgba(154,126,212,0.52)]',
+        'hover:border-[rgba(155,93,229,0.50)]',
         'hover:-translate-y-0.5',
       ].join(' ');
 
   // ── Icon box ──────────────────────────────────────────────────────────────────
   const iconBg = resource.isFree
-    ? 'rgba(154,126,212,0.18)'
+    ? 'rgba(244,162,97,0.15)'
     : isUnlocked
-      ? 'rgba(255,128,80,0.16)'
-      : 'rgba(154,126,212,0.08)';
+      ? 'rgba(155,93,229,0.15)'
+      : 'rgba(155,93,229,0.08)';
 
   const iconColor = resource.isFree
     ? 'text-brand-primary'
     : isUnlocked
       ? 'text-brand-accent'
-      : 'text-[#B8A6D8]';
+      : 'text-[#7B5EA7]';
 
   return (
     <div className={`rounded-xl p-6 flex flex-col h-full transition-all duration-200 ${cardCls}`}>
@@ -104,7 +104,7 @@ export default function ResourceCard({ resource }: { resource: Resource }) {
 
         {/* Badges */}
         <div className="flex items-center gap-2">
-          <span className="px-2.5 py-1 bg-[rgba(154,126,212,0.12)] text-brand-primary-dark text-[10px] rounded-md font-bold tracking-wider uppercase">
+          <span className="px-2.5 py-1 bg-[rgba(155,93,229,0.10)] text-[#0D1856] text-[10px] rounded-md font-bold tracking-wider uppercase">
             {resource.documentType}
           </span>
           <span className={`px-2.5 py-1 text-[10px] rounded-md font-bold tracking-wider uppercase ${accessBadge.cls}`}>
@@ -114,7 +114,7 @@ export default function ResourceCard({ resource }: { resource: Resource }) {
       </div>
 
       {/* ── Divider + Actions ── */}
-      <div className="mt-5 pt-5" style={{ borderTop: '1px solid rgba(154,126,212,0.14)' }}>
+      <div className="mt-5 pt-5" style={{ borderTop: '1px solid rgba(155,93,229,0.12)' }}>
         <div className="flex flex-col sm:flex-row gap-2.5">
           {isLocked ? (
             <>
@@ -161,9 +161,9 @@ export default function ResourceCard({ resource }: { resource: Resource }) {
                 <div
                   className="flex-1 py-2.5 rounded-xl text-[13px] flex items-center justify-center gap-2 select-none cursor-not-allowed"
                   style={{
-                    border: '1.5px solid rgba(154,126,212,0.14)',
-                    color: 'rgba(0,0,0,0.45)',
-                    background: 'rgba(154,126,212,0.03)',
+                    border: '1.5px solid rgba(155,93,229,0.25)',
+                    color: 'rgba(107,79,160,0.55)',
+                    background: 'rgba(155,93,229,0.06)',
                   }}
                 >
                   <Lock size={13} strokeWidth={2} />
