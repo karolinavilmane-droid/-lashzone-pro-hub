@@ -73,15 +73,15 @@ export default function WelcomeView({ onSelectAction }: { onSelectAction: (id: s
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="p-8 max-w-7xl mx-auto space-y-12 pb-24"
+      className="p-4 md:p-8 max-w-7xl mx-auto space-y-8 md:space-y-12 pb-24"
     >
       {/* Welcome Header */}
       <motion.div variants={itemVariants} className="flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
-          <h2 className="text-4xl font-serif font-bold text-brand-primary-dark tracking-tight mb-3">
+          <h2 className="text-2xl md:text-4xl font-serif font-bold text-brand-primary-dark tracking-tight mb-3">
             Welcome, Professional Excellence
           </h2>
-          <p className="text-[#333] text-lg font-light max-w-xl leading-relaxed">
+          <p className="text-[#333] text-base md:text-lg font-light max-w-xl leading-relaxed">
             This is your internal command centre for {BRANDING.businessName}. Access all proprietary documentation, 
             safety protocols, and management templates below.
           </p>
@@ -102,7 +102,7 @@ export default function WelcomeView({ onSelectAction }: { onSelectAction: (id: s
           <motion.div 
             key={i} 
             variants={itemVariants}
-            className="p-8 bg-white border border-brand-border-light rounded-3xl shadow-brand-sm hover:shadow-brand-md transition-all group cursor-default"
+            className="p-5 md:p-8 bg-white border border-brand-border-light rounded-2xl md:rounded-3xl shadow-brand-sm hover:shadow-brand-md transition-all group cursor-default"
           >
             <div className="flex items-center justify-between mb-6">
               <div className={`p-4 rounded-2xl ${stat.bg} transition-transform group-hover:scale-110 duration-300`}>
@@ -137,7 +137,7 @@ export default function WelcomeView({ onSelectAction }: { onSelectAction: (id: s
                 key={product.id}
                 variants={itemVariants}
                 onClick={() => onSelectAction(product.id)}
-                className="group p-8 bg-white border border-brand-border-light rounded-3xl hover:border-brand-primary shadow-brand-sm hover:shadow-brand-lg transition-all cursor-pointer relative overflow-hidden"
+                className="group p-5 md:p-8 bg-white border border-brand-border-light rounded-2xl md:rounded-3xl hover:border-brand-primary shadow-brand-sm hover:shadow-brand-lg transition-all cursor-pointer relative overflow-hidden"
               >
                 <div className="flex items-start justify-between mb-8">
                   <div className="p-4 bg-brand-primary-light group-hover:bg-brand-primary group-hover:text-white rounded-2xl transition-all duration-300 border border-brand-primary/10">

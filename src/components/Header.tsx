@@ -43,11 +43,11 @@ export default function Header({ selectedId, onHome }: HeaderProps) {
 
   return (
     <header
-      className="flex items-center justify-between px-10 h-24 bg-white sticky top-0 z-[40]"
+      className="flex items-center justify-between px-4 md:px-10 h-16 md:h-24 bg-white sticky top-0 z-[40]"
       style={{ borderBottom: '1px solid rgba(244, 162, 97, 0.24)', boxShadow: '0 2px 20px rgba(45,10,94,0.08)' }}
     >
       {/* ── Left: logo + section title ── */}
-      <div className="flex items-center gap-10">
+      <div className="flex items-center gap-2 md:gap-10">
         <div
           className="flex items-center cursor-pointer hover:opacity-80 transition-opacity"
           onClick={onHome}
@@ -55,18 +55,18 @@ export default function Header({ selectedId, onHome }: HeaderProps) {
           <img
             src="/logo.jpg"
             alt="LashZone logo"
-            className="h-12 w-auto object-contain"
+            className="h-8 md:h-12 w-auto object-contain"
             referrerPolicy="no-referrer"
           />
         </div>
 
         <div
-          className="flex items-center gap-8 pl-10"
+          className="flex items-center gap-2 md:gap-8 pl-2 md:pl-10"
           style={{ borderLeft: '1px solid rgba(244, 162, 97, 0.22)' }}
         >
-          <div className="flex items-center gap-2.5">
-            <span className="text-brand-primary/40 text-2xl font-light">/</span>
-            <h2 className="text-[20px] font-serif font-black text-brand-primary-dark tracking-tight">
+          <div className="flex items-center gap-1.5 md:gap-2.5">
+            <span className="text-brand-primary/40 text-lg md:text-2xl font-light">/</span>
+            <h2 className="text-[14px] md:text-[20px] font-serif font-black text-brand-primary-dark tracking-tight">
               {sectionTitle}
             </h2>
           </div>
@@ -86,7 +86,7 @@ export default function Header({ selectedId, onHome }: HeaderProps) {
       </div>
 
       {/* ── Right: search + user ── */}
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-2 md:gap-6">
         {/* Search */}
         <div
           className="hidden lg:flex items-center rounded-xl px-4 py-2.5 group transition-all w-64 focus-within:border-brand-primary/50"
@@ -102,20 +102,20 @@ export default function Header({ selectedId, onHome }: HeaderProps) {
           />
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 md:gap-4">
           {/* Bell */}
           <button
-            className="p-2.5 text-brand-primary/45 hover:text-brand-primary hover:bg-brand-primary-light rounded-xl transition-all relative"
+            className="p-1.5 md:p-2.5 text-brand-primary/45 hover:text-brand-primary hover:bg-brand-primary-light rounded-lg md:rounded-xl transition-all relative"
           >
-            <Bell size={20} />
-            <span className="absolute top-2 right-2 w-2 h-2 bg-brand-accent rounded-full border-2 border-white" style={{ boxShadow: '0 0 6px rgba(155,93,229,0.5)' }} />
+            <Bell size={16} className="md:w-[20px] md:h-[20px]" />
+            <span className="absolute top-1.5 md:top-2 right-1.5 md:right-2 w-1.5 md:w-2 h-1.5 md:h-2 bg-brand-accent rounded-full border-2 border-white" style={{ boxShadow: '0 0 6px rgba(155,93,229,0.5)' }} />
           </button>
 
-          <div className="h-8 w-px mx-1" style={{ background: 'rgba(244,162,97,0.22)' }} />
+          <div className="h-6 md:h-8 w-px mx-0.5 md:mx-1" style={{ background: 'rgba(244,162,97,0.22)' }} />
 
           {user ? (
             /* ── Logged-in user block ── */
-            <div className="flex items-center gap-3 pl-1 group">
+            <div className="flex items-center gap-1 md:gap-3 pl-1 group">
               <div className="text-right hidden sm:block">
                 <p className="text-[11px] font-black text-brand-primary-dark uppercase tracking-widest leading-none mb-1">
                   {name}
@@ -126,7 +126,7 @@ export default function Header({ selectedId, onHome }: HeaderProps) {
               </div>
               {/* Avatar */}
               <div
-                className="w-10 h-10 rounded-2xl bg-brand-primary flex items-center justify-center text-white font-black text-xs border-2 border-white"
+                className="w-8 h-8 md:w-10 md:h-10 rounded-xl md:rounded-2xl bg-brand-primary flex items-center justify-center text-white font-black text-[10px] md:text-xs border-2 border-white"
                 style={{ boxShadow: 'var(--shadow-brand-md)' }}
               >
                 {initials}
@@ -134,16 +134,16 @@ export default function Header({ selectedId, onHome }: HeaderProps) {
               <button
                 onClick={signOut}
                 title="Sign out"
-                className="p-2 text-brand-primary/35 hover:text-brand-primary hover:bg-brand-primary-light rounded-xl transition-all"
+                className="p-1.5 md:p-2 text-brand-primary/35 hover:text-brand-primary hover:bg-brand-primary-light rounded-lg md:rounded-xl transition-all"
               >
-                <LogOut size={16} />
+                <LogOut size={14} className="md:w-[16px] md:h-[16px]" />
               </button>
             </div>
           ) : (
             /* ── Signed-out ── */
             <button
               onClick={openLoginModal}
-              className="px-5 py-2.5 bg-brand-primary text-white rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-brand-accent active:scale-[0.97] transition-all"
+              className="px-3 md:px-5 py-1.5 md:py-2.5 bg-brand-primary text-white rounded-lg md:rounded-xl font-bold text-[11px] md:text-xs uppercase tracking-widest hover:bg-brand-accent active:scale-[0.97] transition-all"
               style={{ boxShadow: 'var(--shadow-brand-primary)' }}
             >
               Sign In

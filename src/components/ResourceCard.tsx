@@ -115,7 +115,7 @@ export default function ResourceCard({ resource }: { resource: Resource }) {
 
       {/* ── Divider + Actions ── */}
       <div className="mt-5 pt-5" style={{ borderTop: '1px solid rgba(154,126,212,0.14)' }}>
-        <div className="flex gap-2.5">
+        <div className="flex flex-col sm:flex-row gap-2.5">
           {isLocked ? (
             <>
               {/* ── Sign In to Unlock / Unlock Access ──────────────────────────

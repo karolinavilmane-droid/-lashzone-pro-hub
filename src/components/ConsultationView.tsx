@@ -12,18 +12,18 @@ export default function ConsultationView() {
 
   return (
     <div className="min-h-screen bg-brand-bg-soft">
-      <div className="px-8 py-10 max-w-6xl mx-auto">
+      <div className="px-4 md:px-8 py-6 md:py-10 max-w-6xl mx-auto">
 
         {/* Heading */}
-        <h1 className="text-[38px] font-serif font-bold text-[#0D1856] mb-2 tracking-tight leading-tight">
+        <h1 className="text-[28px] md:text-[38px] font-serif font-bold text-[#0D1856] mb-2 tracking-tight leading-tight">
           Document Library
         </h1>
-        <p className="text-[16px] text-[#000000]/65 mb-6 font-light leading-relaxed">
+        <p className="text-[14px] md:text-[16px] text-[#000000]/65 mb-4 md:mb-6 font-light leading-relaxed">
           Essential resources for professional lash consultations
         </p>
 
         {/* Access summary badges */}
-        <div className="flex items-center gap-3 mb-10">
+        <div className="flex items-center gap-2 md:gap-3 mb-6 md:mb-10">
           <span
             className="flex items-center gap-2 text-[11px] font-bold text-brand-primary px-3.5 py-1.5 rounded-full"
             style={{ background: 'rgba(154,126,212,0.12)', border: '1px solid rgba(154,126,212,0.25)' }}

@@ -137,7 +137,7 @@ export default function Sidebar({ selectedId, onSelect, onHome }: SidebarProps) 
       {/* Mobile toggle */}
       <button
         onClick={toggleSidebar}
-        className="md:hidden fixed bottom-6 left-6 w-14 h-14 bg-brand-primary text-white rounded-full flex items-center justify-center z-50 transition-all hover:bg-brand-accent active:scale-95"
+        className="md:hidden fixed bottom-24 left-4 w-12 h-12 bg-brand-primary text-white rounded-full flex items-center justify-center z-50 transition-all hover:bg-brand-accent active:scale-95"
         style={{ boxShadow: 'var(--shadow-brand-md)' }}
       >
         <Menu size={24} />
