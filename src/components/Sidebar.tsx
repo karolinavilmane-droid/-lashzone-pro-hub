@@ -43,7 +43,7 @@ export default function Sidebar({ selectedId, onSelect, onHome }: SidebarProps) 
         className={`w-full text-left px-4 py-3.5 rounded-xl transition-all duration-250 flex items-center gap-3.5 group relative overflow-hidden ${
           isActive
             ? 'bg-white/[0.22] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_4px_20px_-4px_rgba(0,0,0,0.30)]'
-            : 'hover:bg-white/[0.10] text-white/70 hover:text-white'
+            : 'hover:bg-white/[0.10] text-white/85 hover:text-white'
         }`}
       >
         {/* Icon */}
@@ -51,14 +51,14 @@ export default function Sidebar({ selectedId, onSelect, onHome }: SidebarProps) 
           <Icon
             size={18}
             className={`transition-colors duration-200 ${
-              isActive ? 'text-brand-accent' : 'text-white/55 group-hover:text-white/90'
+              isActive ? 'text-brand-accent' : 'text-white/70 group-hover:text-white/90'
             }`}
           />
         </div>
 
         {/* Label */}
         <span className={`text-[13px] tracking-tight transition-all duration-250 ${
-          isActive ? 'opacity-100 font-bold text-white' : 'opacity-90 group-hover:opacity-100 font-medium'
+          isActive ? 'opacity-100 font-bold text-white' : 'opacity-100 group-hover:opacity-100 font-bold'
         }`}>
           {item.menuTitle}
         </span>
@@ -67,7 +67,7 @@ export default function Sidebar({ selectedId, onSelect, onHome }: SidebarProps) 
         {isActive && (
           <motion.div
             layoutId="active-nav-indicator"
-            className="absolute left-0 w-[3px] h-[45%] bg-brand-accent rounded-r-full shadow-[0_0_8px_rgba(255,128,80,0.6)]"
+            className="absolute left-0 w-[3px] h-[45%] bg-brand-accent rounded-r-full shadow-[0_0_8px_rgba(155,93,229,0.6)]"
             initial={{ opacity: 0, x: -4 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ type: 'spring', damping: 24, stiffness: 280 }}
@@ -88,7 +88,7 @@ export default function Sidebar({ selectedId, onSelect, onHome }: SidebarProps) 
           {BRANDING.logoUrl ? (
             <div className="group-hover:scale-105 transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]">
               <img
-                src={BRANDING.logoUrl}
+                src="/logo.jpg"
                 alt={BRANDING.businessName}
                 className="h-14 w-auto object-contain"
                 referrerPolicy="no-referrer"
@@ -137,7 +137,7 @@ export default function Sidebar({ selectedId, onSelect, onHome }: SidebarProps) 
       {/* Mobile toggle */}
       <button
         onClick={toggleSidebar}
-        className="md:hidden fixed bottom-6 left-6 w-14 h-14 bg-brand-primary text-white rounded-full flex items-center justify-center z-50 transition-all hover:scale-105 active:scale-95"
+        className="md:hidden fixed bottom-6 left-6 w-14 h-14 bg-brand-primary text-white rounded-full flex items-center justify-center z-50 transition-all hover:bg-brand-accent active:scale-95"
         style={{ boxShadow: 'var(--shadow-brand-md)' }}
       >
         <Menu size={24} />
@@ -170,7 +170,7 @@ export default function Sidebar({ selectedId, onSelect, onHome }: SidebarProps) 
       {/* Desktop sidebar — right-edge shadow creates separation from content */}
       <aside
         className="hidden md:flex flex-col w-[300px] h-screen sticky top-0 bg-brand-primary-deep z-50"
-        style={{ boxShadow: '8px 0 32px rgba(28, 16, 56, 0.30), 1px 0 0 rgba(255,255,255,0.05)' }}
+        style={{ boxShadow: '8px 0 32px rgba(45, 10, 94, 0.30), 1px 0 0 rgba(255,255,255,0.05)' }}
       >
         <SidebarContent />
       </aside>

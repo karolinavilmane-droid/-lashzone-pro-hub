@@ -94,15 +94,11 @@ export default function ResourceCard({ resource }: { resource: Resource }) {
           <Icon className={iconColor} size={22} />
         </div>
 
-        <h3 className={`text-[15px] leading-snug mb-2 ${
-          isLocked ? 'font-semibold text-[#7A6499]' : 'font-bold text-brand-ink-deep'
-        }`}>
+        <h3 className="text-[15px] leading-snug mb-2 font-bold text-[#000000]">
           {resource.title}
         </h3>
 
-        <p className={`text-[13px] leading-relaxed mb-5 ${
-          isLocked ? 'text-brand-ink-deep/40' : 'text-brand-ink-deep/65'
-        }`}>
+        <p className="text-[13px] leading-relaxed mb-5 text-[#333]">
           {resource.shortDescription}
         </p>
 
@@ -166,7 +162,7 @@ export default function ResourceCard({ resource }: { resource: Resource }) {
                   className="flex-1 py-2.5 rounded-xl text-[13px] flex items-center justify-center gap-2 select-none cursor-not-allowed"
                   style={{
                     border: '1.5px solid rgba(154,126,212,0.14)',
-                    color: 'rgba(18,14,26,0.28)',
+                    color: 'rgba(0,0,0,0.45)',
                     background: 'rgba(154,126,212,0.03)',
                   }}
                 >

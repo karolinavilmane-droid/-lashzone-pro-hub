@@ -34,7 +34,7 @@ export default function GuideView({ product, onContinue }: GuideViewProps) {
                 <BookOpen size={20} className="text-brand-primary-dark" />
               </div>
               <div className="flex flex-col">
-                <span className="text-[10px] uppercase tracking-[0.2em] font-black text-brand-primary-dark/40">
+                <span className="text-[10px] uppercase tracking-[0.2em] font-black text-[#666]">
                   Secure Resource
                 </span>
                 <span className="text-[11px] font-black text-brand-primary uppercase tracking-[0.1em]">{product.category}</span>
@@ -44,7 +44,7 @@ export default function GuideView({ product, onContinue }: GuideViewProps) {
             <h2 className="text-5xl font-serif font-bold text-brand-primary-dark leading-tight">
               {product.guideTitle}
             </h2>
-            <p className="text-xl text-brand-ink-deep/60 font-light max-w-3xl leading-relaxed">
+            <p className="text-xl text-[#333] font-light max-w-3xl leading-relaxed">
               {product.shortDescription}
             </p>
           </div>
@@ -59,7 +59,7 @@ export default function GuideView({ product, onContinue }: GuideViewProps) {
             </button>
             <div className="flex items-center justify-center gap-2">
               <div className="w-1.5 h-1.5 rounded-full bg-brand-primary animate-pulse" />
-              <p className="text-[10px] text-brand-primary/40 font-black uppercase tracking-[0.15em]">
+              <p className="text-[10px] text-[#888] font-black uppercase tracking-[0.15em]">
                 Verified Asset
               </p>
             </div>
@@ -83,7 +83,7 @@ export default function GuideView({ product, onContinue }: GuideViewProps) {
                 <h5 className="text-[11px] uppercase tracking-[0.2em] font-black text-brand-accent-dark flex items-center gap-2">
                   <Target size={16} /> Core Objective
                 </h5>
-                <p className="text-brand-ink-deep/70 font-light leading-relaxed text-lg">
+                <p className="text-[#333] font-light leading-relaxed text-lg">
                   {product.whoItIsFor}
                 </p>
               </section>
@@ -124,7 +124,7 @@ export default function GuideView({ product, onContinue }: GuideViewProps) {
                     <div className="w-10 h-10 rounded-xl bg-white border border-brand-primary/10 flex items-center justify-center flex-shrink-0 shadow-brand-sm">
                       <span className="text-xs font-black text-brand-primary-dark">{i + 1}</span>
                     </div>
-                    <span className="text-sm font-bold text-brand-primary-dark/80 group-hover:text-brand-primary transition-colors">{item}</span>
+                    <span className="text-sm font-bold text-[#333] group-hover:text-brand-primary transition-colors">{item}</span>
                   </div>
                 ))}
               </div>

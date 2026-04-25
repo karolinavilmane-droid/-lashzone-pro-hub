@@ -15,10 +15,10 @@ export default function AllergySafetyView() {
       <div className="px-8 py-10 max-w-6xl mx-auto">
 
         {/* Heading */}
-        <h1 className="text-[38px] font-serif font-bold text-brand-ink-deep mb-2 tracking-tight leading-tight">
+        <h1 className="text-[38px] font-serif font-bold text-[#0D1856] mb-2 tracking-tight leading-tight">
           Allergy and Safety
         </h1>
-        <p className="text-[16px] text-brand-ink-deep/60 mb-6 font-light leading-relaxed">
+        <p className="text-[16px] text-[#000000]/65 mb-6 font-light leading-relaxed">
           Essential resources for safe lash application and client health management
         </p>
 

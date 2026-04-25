@@ -49,7 +49,7 @@ export default function LoginModal() {
     setSuccess(null);
   };
 
-  const inputCls = 'w-full px-4 py-3 border rounded-xl text-[13px] text-brand-ink-deep placeholder:text-brand-ink-deep/30 bg-white outline-none transition-all focus:border-brand-primary focus:shadow-[0_0_0_3px_rgba(154,126,212,0.12)]';
+  const inputCls = 'w-full px-4 py-3 border rounded-xl text-[13px] text-[#000] placeholder:text-[#999] bg-white outline-none transition-all focus:border-brand-primary focus:shadow-[0_0_0_3px_rgba(154,126,212,0.12)]';
 
   return (
     <div
@@ -70,7 +70,7 @@ export default function LoginModal() {
               <h2 className="text-2xl font-serif font-bold text-brand-primary-dark tracking-tight">
                 {isSignUp ? 'Create Account' : 'Sign In'}
               </h2>
-              <p className="text-[13px] text-brand-ink-deep/52 mt-1 font-light">
+              <p className="text-[13px] text-[#444] mt-1 font-light">
                 {isSignUp
                   ? 'Create your account to access resources'
                   : 'Sign in to access your document library'}
@@ -78,7 +78,7 @@ export default function LoginModal() {
             </div>
             <button
               onClick={closeLoginModal}
-              className="text-brand-ink-deep/25 hover:text-brand-primary p-1.5 -mt-1 -mr-1.5 rounded-lg hover:bg-brand-primary-light"
+              className="text-[#888] hover:text-brand-primary p-1.5 -mt-1 -mr-1.5 rounded-lg hover:bg-brand-primary-light"
             >
               <X size={18} strokeWidth={2.5} />
             </button>
@@ -152,7 +152,7 @@ export default function LoginModal() {
           <div className="mt-6 pt-5" style={{ borderTop: '1px solid rgba(154,126,212,0.12)' }}>
             <button
               onClick={toggle}
-              className="w-full text-center text-[12px] text-brand-primary/50 hover:text-brand-primary font-medium"
+              className="w-full text-center text-[12px] text-[#666] hover:text-brand-primary font-medium"
             >
               {isSignUp
                 ? 'Already have an account? Sign in'

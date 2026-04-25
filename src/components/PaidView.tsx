@@ -48,7 +48,7 @@ export default function PaidView({ product, onBack }: PaidViewProps) {
             <h2 className="text-4xl font-serif font-bold text-brand-primary-dark tracking-tight">
               Module Access Request
             </h2>
-            <p className="text-base text-brand-ink-deep/60 font-light leading-relaxed max-w-xl">
+            <p className="text-base text-[#333] font-light leading-relaxed max-w-xl">
               Please provide the following details to generate your personalised {product.paidTitle.toLowerCase()}. 
               All data is processed according to our security protocols.
             </p>
@@ -108,7 +108,7 @@ export default function PaidView({ product, onBack }: PaidViewProps) {
                 </div>
                 <div>
                   <p className="text-sm font-black text-brand-ink-deep leading-tight mb-1">Dynamic Generation</p>
-                  <p className="text-[11px] text-brand-primary/60 font-medium leading-relaxed">Your assets are built in real-time based on your input.</p>
+                  <p className="text-[11px] text-[#444] font-medium leading-relaxed">Your assets are built in real-time based on your input.</p>
                 </div>
               </div>
               <div className="flex gap-4">
@@ -117,7 +117,7 @@ export default function PaidView({ product, onBack }: PaidViewProps) {
                 </div>
                 <div>
                   <p className="text-sm font-black text-brand-ink-deep leading-tight mb-1">Commercial Licence</p>
-                  <p className="text-[11px] text-brand-primary/60 font-medium leading-relaxed">Includes full usage rights for your primary studio location.</p>
+                  <p className="text-[11px] text-[#444] font-medium leading-relaxed">Includes full usage rights for your primary studio location.</p>
                 </div>
               </div>
             </div>
@@ -127,7 +127,7 @@ export default function PaidView({ product, onBack }: PaidViewProps) {
                 <CreditCard size={20} />
               </div>
               <div>
-                <p className="text-[9px] font-black text-brand-primary/40 uppercase tracking-[0.2em]">Service Tier</p>
+                <p className="text-[9px] font-black text-[#666] uppercase tracking-[0.2em]">Service Tier</p>
                 <p className="text-sm font-black text-brand-primary-dark">Enterprise Pro</p>
               </div>
             </div>
@@ -139,7 +139,7 @@ export default function PaidView({ product, onBack }: PaidViewProps) {
             </div>
             <div className="space-y-2">
               <h5 className="text-[11px] font-black text-brand-primary-dark uppercase tracking-[0.2em]">Security Protocol</h5>
-              <p className="text-[11px] text-brand-ink-deep/40 font-light leading-relaxed">
+              <p className="text-[11px] text-[#555] font-light leading-relaxed">
                 Personalised data is encrypted and partitioned at the database level.
               </p>
             </div>

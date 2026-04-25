@@ -7,51 +7,51 @@
 
   /* ── Core Brand Colors ─────────────────────────────────────────────────── */
   --color-brand-bg: #FFFFFF;
-  --color-brand-primary: #9A7ED4;
-  --color-brand-accent: #FF8050;
-  --color-brand-ink: #1A1A1A;
+  --color-brand-primary: #F4A261;
+  --color-brand-accent: #9B5DE5;
+  --color-brand-ink: #000000;
 
   /* ── Derived Variants ──────────────────────────────────────────────────── */
-  --color-brand-primary-dark: #6B4FA0;
-  /* Sidebar — richer, deeper indigo-purple for stronger contrast vs white content */
-  --color-brand-primary-deep: #1C1038;
-  --color-brand-primary-light: #EDE6FF;
+  --color-brand-primary-dark: #0D1856;
+  /* Sidebar — richer, deeper purple for stronger contrast vs white content */
+  --color-brand-primary-deep: #2D0A5E;
+  --color-brand-primary-light: #FEF0E0;
 
-  --color-brand-accent-dark: #E8612A;
+  --color-brand-accent-dark: #7C3AED;
 
-  --color-brand-ink-deep: #120E1A;
+  --color-brand-ink-deep: #000000;
   /* Near-pure white — removes the grey-lavender tint that washed everything out */
   --color-brand-bg-soft: #FDFCFF;
 
-  --color-brand-border: #9A7ED4;
-  --color-brand-border-light: rgba(154, 126, 212, 0.20);
+  --color-brand-border: #F4A261;
+  --color-brand-border-light: rgba(244, 162, 97, 0.20);
 
   /* ── Elevation — stronger so cards visibly lift off the white surface ──── */
   --shadow-brand-sm:
-    0 1px 4px rgba(42, 27, 74, 0.10),
-    0 4px 14px rgba(42, 27, 74, 0.08);
+    0 1px 4px rgba(45, 10, 94, 0.10),
+    0 4px 14px rgba(45, 10, 94, 0.08);
   --shadow-brand-md:
-    0 4px 20px rgba(42, 27, 74, 0.14),
-    0 2px 6px rgba(42, 27, 74, 0.08);
+    0 4px 20px rgba(45, 10, 94, 0.14),
+    0 2px 6px rgba(45, 10, 94, 0.08);
   --shadow-brand-lg:
-    0 12px 48px rgba(42, 27, 74, 0.18),
-    0 4px 14px rgba(42, 27, 74, 0.10);
+    0 12px 48px rgba(45, 10, 94, 0.18),
+    0 4px 14px rgba(45, 10, 94, 0.10);
 
-  /* ── Primary CTA shadow (coloured purple glow) ─────────────────────────── */
+  /* ── Primary CTA shadow (coloured coral glow) ──────────────────────────── */
   --shadow-brand-primary:
-    0 4px 16px rgba(107, 79, 160, 0.45),
-    0 1px 4px rgba(107, 79, 160, 0.25);
+    0 4px 16px rgba(224, 122, 47, 0.45),
+    0 1px 4px rgba(224, 122, 47, 0.25);
   --shadow-brand-primary-hover:
-    0 6px 22px rgba(107, 79, 160, 0.55),
-    0 2px 8px rgba(107, 79, 160, 0.28);
+    0 6px 22px rgba(224, 122, 47, 0.55),
+    0 2px 8px rgba(224, 122, 47, 0.28);
 
-  /* ── Accent CTA shadow (orange glow for unlock button) ─────────────────── */
+  /* ── Accent CTA shadow (purple glow) ──────────────────────────────────── */
   --shadow-brand-accent:
-    0 4px 16px rgba(255, 128, 80, 0.40),
-    0 1px 4px rgba(255, 128, 80, 0.22);
+    0 4px 16px rgba(155, 93, 229, 0.40),
+    0 1px 4px rgba(155, 93, 229, 0.22);
   --shadow-brand-accent-hover:
-    0 6px 22px rgba(255, 128, 80, 0.52),
-    0 2px 8px rgba(255, 128, 80, 0.28);
+    0 6px 22px rgba(155, 93, 229, 0.52),
+    0 2px 8px rgba(155, 93, 229, 0.28);
 }
 
 @layer base {
@@ -68,10 +68,11 @@
   }
 
   input, textarea, select {
-    @apply transition-all duration-150;
+    @apply transition-colors duration-150;
   }
 
   a {
     @apply transition-colors duration-150;
   }
 }
+

@@ -3,20 +3,18 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import lashzoneLogo from './assets/lashzone-logo.svg';
-
 export interface BrandingConfig {
   businessName: string;
-  logoUrl: any; // Allow for imported asset modules
+  logoUrl: string;
   primaryColour: string;
   accentColour: string;
-  logoPrefix: string; // The letter used in the logo mark
+  logoPrefix: string;
 }
 
 export const BRANDING: BrandingConfig = {
   businessName: "LashZone",
-  logoUrl: lashzoneLogo, 
-  primaryColour: "#9A7ED4",
-  accentColour: "#FF8050",
+  logoUrl: "/logo.jpg",
+  primaryColour: "#F4A261",
+  accentColour: "#9B5DE5",
   logoPrefix: "L"
 };
