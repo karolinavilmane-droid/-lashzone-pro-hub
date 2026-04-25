@@ -44,7 +44,7 @@ export default function Header({ selectedId, onHome }: HeaderProps) {
   return (
     <header
       className="flex items-center justify-between px-4 md:px-10 h-16 md:h-20 bg-gradient-to-r from-[#D4C4EE] via-[#E6D8FF] to-[#EBE0FF] sticky top-0 z-[40]"
-      style={{ borderBottom: '1px solid rgba(155, 93, 229, 0.28)', boxShadow: '0 2px 24px rgba(45,10,94,0.12)' }}
+      style={{ borderBottom: '1px solid rgba(123, 63, 228, 0.30)', boxShadow: '0 2px 24px rgba(45,10,94,0.12)' }}
     >
       {/* ── Left: logo + section title ── */}
       <div className="flex items-center gap-3 md:gap-8">
@@ -62,10 +62,10 @@ export default function Header({ selectedId, onHome }: HeaderProps) {
 
         <div
           className="flex items-center gap-2 md:gap-6 pl-3 md:pl-8"
-          style={{ borderLeft: '1px solid rgba(155, 93, 229, 0.30)' }}
+          style={{ borderLeft: '1px solid rgba(123, 63, 228, 0.35)' }}
         >
           <div className="flex items-center gap-1.5 md:gap-2">
-            <span className="text-[#9B5DE5]/50 text-lg md:text-2xl font-light leading-none">/</span>
+            <span className="text-[#7B3FE4]/50 text-lg md:text-2xl font-light leading-none">/</span>
             <h2 className="text-[15px] md:text-[22px] font-serif font-black text-[#0D1856] tracking-tight">
               {sectionTitle}
             </h2>
@@ -74,9 +74,9 @@ export default function Header({ selectedId, onHome }: HeaderProps) {
           {selectedId && (
             <div
               className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full"
-              style={{ background: 'rgba(155,93,229,0.14)', border: '1px solid rgba(155,93,229,0.30)' }}
+              style={{ background: 'rgba(123,63,228,0.14)', border: '1px solid rgba(123,63,228,0.35)' }}
             >
-              <div className="w-1.5 h-1.5 rounded-full bg-[#9B5DE5]" />
+              <div className="w-1.5 h-1.5 rounded-full bg-[#7B3FE4]" />
               <span className="text-[10px] font-black text-[#6B2FA0] uppercase tracking-[0.2em]">
                 Active Section
               </span>
@@ -90,11 +90,11 @@ export default function Header({ selectedId, onHome }: HeaderProps) {
         {/* Search */}
         <div
           className="hidden lg:flex items-center rounded-xl px-4 py-2.5 group transition-all w-64 focus-within:border-brand-accent/50"
-          style={{ background: 'rgba(244,162,97,0.06)', border: '1px solid rgba(155,93,229,0.25)' }}
+          style={{ background: 'rgba(230,126,34,0.06)', border: '1px solid rgba(123,63,228,0.28)' }}
           onFocusCapture={e => (e.currentTarget.style.boxShadow = 'var(--shadow-brand-md)')}
           onBlurCapture={e  => (e.currentTarget.style.boxShadow = 'var(--shadow-brand-sm)')}
         >
-          <Search size={15} className="text-[#9B5DE5]/45 group-focus-within:text-[#9B5DE5] flex-shrink-0" />
+          <Search size={15} className="text-[#7B3FE4]/45 group-focus-within:text-[#7B3FE4] flex-shrink-0" />
           <input
             type="text"
             placeholder="Search resources..."
@@ -105,13 +105,13 @@ export default function Header({ selectedId, onHome }: HeaderProps) {
         <div className="flex items-center gap-2 md:gap-4">
           {/* Bell */}
           <button
-            className="p-1.5 md:p-2.5 text-[#9B5DE5]/45 hover:text-[#9B5DE5] hover:bg-[#EBE0FF] rounded-lg md:rounded-xl transition-all relative"
+            className="p-1.5 md:p-2.5 text-[#7B3FE4]/45 hover:text-[#7B3FE4] hover:bg-[#EBE0FF] rounded-lg md:rounded-xl transition-all relative"
           >
             <Bell size={16} className="md:w-[20px] md:h-[20px]" />
-            <span className="absolute top-1.5 md:top-2 right-1.5 md:right-2 w-1.5 md:w-2 h-1.5 md:h-2 bg-brand-accent rounded-full border-2 border-white" style={{ boxShadow: '0 0 6px rgba(155,93,229,0.5)' }} />
+            <span className="absolute top-1.5 md:top-2 right-1.5 md:right-2 w-1.5 md:w-2 h-1.5 md:h-2 bg-[#7B3FE4] rounded-full border-2 border-white" style={{ boxShadow: '0 0 6px rgba(123,63,228,0.5)' }} />
           </button>
 
-          <div className="h-6 md:h-8 w-px mx-0.5 md:mx-1" style={{ background: 'rgba(155,93,229,0.25)' }} />
+          <div className="h-6 md:h-8 w-px mx-0.5 md:mx-1" style={{ background: 'rgba(123,63,228,0.28)' }} />
 
           {user ? (
             /* ── Logged-in user block ── */
@@ -126,15 +126,15 @@ export default function Header({ selectedId, onHome }: HeaderProps) {
               </div>
               {/* Avatar */}
               <div
-                className="w-8 h-8 md:w-10 md:h-10 rounded-xl md:rounded-2xl bg-[#9B5DE5] flex items-center justify-center text-white font-black text-[10px] md:text-xs border-2 border-white"
-                style={{ boxShadow: '0 4px 12px rgba(155,93,229,0.35)' }}
+                className="w-8 h-8 md:w-10 md:h-10 rounded-xl md:rounded-2xl bg-[#7B3FE4] flex items-center justify-center text-white font-black text-[10px] md:text-xs border-2 border-white"
+                style={{ boxShadow: '0 4px 12px rgba(123,63,228,0.35)' }}
               >
                 {initials}
               </div>
               <button
                 onClick={signOut}
                 title="Sign out"
-                className="p-1.5 md:p-2 text-[#9B5DE5]/35 hover:text-[#9B5DE5] hover:bg-[#F4EDFF] rounded-lg md:rounded-xl transition-all"
+                className="p-1.5 md:p-2 text-[#7B3FE4]/35 hover:text-[#7B3FE4] hover:bg-[#EBE0FF] rounded-lg md:rounded-xl transition-all"
               >
                 <LogOut size={14} className="md:w-[16px] md:h-[16px]" />
               </button>
@@ -143,8 +143,8 @@ export default function Header({ selectedId, onHome }: HeaderProps) {
             /* ── Signed-out ── */
             <button
               onClick={openLoginModal}
-              className="px-3 md:px-5 py-1.5 md:py-2.5 bg-[#F4A261] text-white rounded-lg md:rounded-xl font-bold text-[11px] md:text-xs uppercase tracking-widest hover:bg-[#E88A3D] active:scale-[0.97] transition-all"
-              style={{ boxShadow: '0 4px 14px rgba(244,162,97,0.45), 0 1px 4px rgba(244,162,97,0.25)' }}
+              className="px-3 md:px-5 py-1.5 md:py-2.5 bg-[#E67E22] text-white rounded-lg md:rounded-xl font-bold text-[11px] md:text-xs uppercase tracking-widest hover:bg-[#CF6D17] active:scale-[0.97] transition-all"
+              style={{ boxShadow: '0 4px 14px rgba(230,126,34,0.45), 0 1px 4px rgba(230,126,34,0.25)' }}
             >
               Sign In
             </button>

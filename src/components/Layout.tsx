@@ -50,11 +50,11 @@ export default function Layout({ children, selectedId, onSelect, onHome }: Layou
           background: transparent;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: rgba(154, 126, 212, 0.18);
+          background: rgba(123, 63, 228, 0.18);
           border-radius: 10px;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: rgba(154, 126, 212, 0.32);
+          background: rgba(123, 63, 228, 0.32);
         }
       `}</style>
     </div>

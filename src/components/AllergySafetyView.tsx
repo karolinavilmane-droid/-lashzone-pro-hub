@@ -25,17 +25,17 @@ export default function AllergySafetyView() {
         {/* Access summary badges */}
         <div className="flex items-center gap-2 md:gap-3 mb-6 md:mb-10">
           <span
-            className="flex items-center gap-2 text-[11px] font-bold text-brand-primary px-3.5 py-1.5 rounded-full"
-            style={{ background: 'rgba(244,162,97,0.12)', border: '1px solid rgba(244,162,97,0.25)' }}
+            className="flex items-center gap-2 text-[11px] font-bold text-[#E67E22] px-3.5 py-1.5 rounded-full"
+            style={{ background: 'rgba(230,126,34,0.12)', border: '1px solid rgba(230,126,34,0.25)' }}
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-primary inline-block" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#E67E22] inline-block" />
             {freeCount} Free
           </span>
           <span
-            className="flex items-center gap-2 text-[11px] font-bold text-brand-accent px-3.5 py-1.5 rounded-full"
-            style={{ background: 'rgba(155,93,229,0.10)', border: '1px solid rgba(155,93,229,0.28)' }}
+            className="flex items-center gap-2 text-[11px] font-bold text-[#7B3FE4] px-3.5 py-1.5 rounded-full"
+            style={{ background: 'rgba(123,63,228,0.10)', border: '1px solid rgba(123,63,228,0.30)' }}
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-accent inline-block" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#7B3FE4] inline-block" />
             {paidCount} Paid
           </span>
         </div>
