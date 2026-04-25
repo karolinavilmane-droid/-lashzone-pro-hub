@@ -57,17 +57,17 @@ export default function ResourceCard({ resource }: { resource: Resource }) {
   const cardCls = isLocked
     ? [
         'bg-white',
-        'border border-[rgba(155,93,229,0.18)]',
-        'shadow-[0_1px_4px_rgba(42,27,74,0.06)]',
-        'hover:shadow-[0_4px_18px_rgba(42,27,74,0.12)]',
-        'hover:border-[rgba(155,93,229,0.35)]',
+        'border border-[rgba(155,93,229,0.22)]',
+        'shadow-[0_2px_8px_rgba(42,27,74,0.08)]',
+        'hover:shadow-[0_6px_24px_rgba(42,27,74,0.14)]',
+        'hover:border-[rgba(155,93,229,0.40)]',
       ].join(' ')
     : [
         'bg-white',
-        'border border-[rgba(155,93,229,0.35)]',
+        'border border-[rgba(155,93,229,0.38)]',
         'shadow-brand-sm',
-        'hover:shadow-brand-md',
-        'hover:border-[rgba(155,93,229,0.55)]',
+        'hover:shadow-[0_6px_24px_rgba(42,27,74,0.14)]',
+        'hover:border-[rgba(155,93,229,0.60)]',
         'hover:-translate-y-0.5',
       ].join(' ');
 
@@ -120,7 +120,7 @@ export default function ResourceCard({ resource }: { resource: Resource }) {
         <div className="flex flex-col sm:flex-row gap-2.5">
           {isLocked ? (
             <>
-              {/* SIGN IN TO UNLOCK — Bright orange gradient */}
+              {/* SIGN IN TO UNLOCK — Bright orange gradient (primary) */}
               <button
                 onClick={handleUnlock}
                 className={`${btnBase} text-white`}
@@ -157,8 +157,8 @@ export default function ResourceCard({ resource }: { resource: Resource }) {
                 <div
                   className={`${btnBase} cursor-not-allowed`}
                   style={{
-                    border: '1.5px solid rgba(155,93,229,0.20)',
-                    color: 'rgba(107,79,160,0.50)',
+                    border: '2px solid rgba(155,93,229,0.20)',
+                    color: 'rgba(107,79,160,0.55)',
                     background: 'rgba(155,93,229,0.04)',
                   }}
                 >
@@ -170,16 +170,17 @@ export default function ResourceCard({ resource }: { resource: Resource }) {
                   onClick={handlePreview}
                   className={`${btnBase}`}
                   style={{
-                    border: '1.5px solid #9B5DE5',
+                    border: '2px solid #9B5DE5',
                     color: '#7C3AED',
+                    fontWeight: 600,
                     background: '#fff',
                     transition: 'transform 160ms ease, box-shadow 160ms ease, background 160ms ease, border-color 160ms ease',
                   }}
                   onMouseEnter={e => {
-                    e.currentTarget.style.background = '#F4EDFF';
+                    e.currentTarget.style.background = '#EDE0FF';
                     e.currentTarget.style.borderColor = '#7C3AED';
                     e.currentTarget.style.transform = 'translateY(-1px)';
-                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(155,93,229,0.20)';
+                    e.currentTarget.style.boxShadow = '0 4px 14px rgba(155,93,229,0.25)';
                   }}
                   onMouseLeave={e => {
                     e.currentTarget.style.background = '#fff';
@@ -200,52 +201,53 @@ export default function ResourceCard({ resource }: { resource: Resource }) {
             </>
           ) : (
             <>
-              {/* DOWNLOAD — Purple gradient */}
+              {/* DOWNLOAD — ORANGE (primary action) */}
               <button
                 onClick={handleDownload}
                 className={`${btnBase} text-white`}
                 style={{
-                  background: 'linear-gradient(135deg, #9B5DE5 0%, #7C3AED 100%)',
-                  boxShadow: '0 4px 14px rgba(155,93,229,0.40), 0 1px 4px rgba(155,93,229,0.22)',
+                  background: 'linear-gradient(135deg, #F4A261 0%, #E8842A 100%)',
+                  boxShadow: '0 4px 14px rgba(244,162,97,0.45), 0 1px 4px rgba(244,162,97,0.25)',
                   transition: 'transform 160ms ease, box-shadow 160ms ease, filter 160ms ease',
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.boxShadow = '0 6px 20px rgba(155,93,229,0.52), 0 2px 8px rgba(155,93,229,0.28)';
+                  e.currentTarget.style.boxShadow = '0 6px 20px rgba(244,162,97,0.55), 0 2px 8px rgba(244,162,97,0.28)';
                   e.currentTarget.style.transform = 'translateY(-1px)';
-                  e.currentTarget.style.filter = 'brightness(1.08)';
+                  e.currentTarget.style.filter = 'brightness(1.06)';
                 }}
                 onMouseLeave={e => {
-                  e.currentTarget.style.boxShadow = '0 4px 14px rgba(155,93,229,0.40), 0 1px 4px rgba(155,93,229,0.22)';
+                  e.currentTarget.style.boxShadow = '0 4px 14px rgba(244,162,97,0.45), 0 1px 4px rgba(244,162,97,0.25)';
                   e.currentTarget.style.transform = 'translateY(0)';
                   e.currentTarget.style.filter = 'brightness(1)';
                 }}
                 onMouseDown={e => {
                   e.currentTarget.style.transform = 'translateY(0) scale(0.975)';
-                  e.currentTarget.style.filter = 'brightness(0.93)';
+                  e.currentTarget.style.filter = 'brightness(0.95)';
                 }}
                 onMouseUp={e => {
                   e.currentTarget.style.transform = 'translateY(-1px)';
-                  e.currentTarget.style.filter = 'brightness(1.08)';
+                  e.currentTarget.style.filter = 'brightness(1.06)';
                 }}
               >
                 <Download size={14} strokeWidth={2.5} /> Download
               </button>
 
-              {/* PREVIEW — Purple outlined */}
+              {/* PREVIEW — Purple outlined (secondary action) */}
               <button
                 onClick={handlePreview}
                 className={`${btnBase}`}
                 style={{
-                  border: '1.5px solid #9B5DE5',
+                  border: '2px solid #9B5DE5',
                   color: '#7C3AED',
+                  fontWeight: 600,
                   background: '#fff',
                   transition: 'transform 160ms ease, box-shadow 160ms ease, background 160ms ease, border-color 160ms ease',
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.background = '#F4EDFF';
+                  e.currentTarget.style.background = '#EDE0FF';
                   e.currentTarget.style.borderColor = '#7C3AED';
                   e.currentTarget.style.transform = 'translateY(-1px)';
-                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(155,93,229,0.20)';
+                  e.currentTarget.style.boxShadow = '0 4px 14px rgba(155,93,229,0.25)';
                 }}
                 onMouseLeave={e => {
                   e.currentTarget.style.background = '#fff';

@@ -14,28 +14,28 @@
   /* ── Derived Variants ──────────────────────────────────────────────────── */
   --color-brand-primary-dark: #0D1856;
   /* Sidebar — deep purple for strong contrast */
-  --color-brand-primary-deep: #2E0B57;
+  --color-brand-primary-deep: #28084F;
   --color-brand-primary-light: #FEF0E0;
 
   --color-brand-accent-dark: #7C3AED;
 
   --color-brand-ink-deep: #000000;
   /* Soft purple-tinted background for brand cohesion across the entire UI */
-  --color-brand-bg-soft: #F4EDFF;
+  --color-brand-bg-soft: #F0E8FA;
 
   --color-brand-border: #F4A261;
   --color-brand-border-light: rgba(244, 162, 97, 0.20);
 
   /* ── Elevation — stronger so cards visibly lift off the surface ──────── */
   --shadow-brand-sm:
-    0 1px 4px rgba(45, 10, 94, 0.10),
-    0 4px 14px rgba(45, 10, 94, 0.08);
+    0 1px 4px rgba(45, 10, 94, 0.12),
+    0 4px 14px rgba(45, 10, 94, 0.09);
   --shadow-brand-md:
-    0 4px 20px rgba(45, 10, 94, 0.14),
-    0 2px 6px rgba(45, 10, 94, 0.08);
+    0 4px 20px rgba(45, 10, 94, 0.16),
+    0 2px 6px rgba(45, 10, 94, 0.10);
   --shadow-brand-lg:
-    0 12px 48px rgba(45, 10, 94, 0.18),
-    0 4px 14px rgba(45, 10, 94, 0.10);
+    0 12px 48px rgba(45, 10, 94, 0.20),
+    0 4px 14px rgba(45, 10, 94, 0.12);
 
   /* ── Primary CTA shadow (coloured coral glow) ──────────────────────────── */
   --shadow-brand-primary:

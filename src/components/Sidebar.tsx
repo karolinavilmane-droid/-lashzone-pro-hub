@@ -80,7 +80,7 @@ export default function Sidebar({ selectedId, onSelect, onHome }: SidebarProps) 
   const SidebarContent = ({ isMobile = false }: { isMobile?: boolean }) => (
     <div className="flex flex-col h-full bg-brand-primary-deep text-white">
       {/* Branding */}
-      <div className="px-8 pt-8 pb-7" style={{ borderBottom: '1px solid rgba(155,93,229,0.15)' }}>
+      <div className="px-8 pt-8 pb-7" style={{ borderBottom: '1px solid rgba(155,93,229,0.12)' }}>
         <div
           className="flex items-center justify-center cursor-pointer group"
           onClick={() => { onHome(); if (isMobile) setIsOpen(false); }}
@@ -90,7 +90,7 @@ export default function Sidebar({ selectedId, onSelect, onHome }: SidebarProps) 
               <img
                 src="/logo.jpg"
                 alt={BRANDING.businessName}
-                className="h-16 w-auto object-contain"
+                className="h-16 w-auto object-contain rounded-lg shadow-[0_4px_16px_rgba(0,0,0,0.25)]"
                 referrerPolicy="no-referrer"
               />
             </div>
