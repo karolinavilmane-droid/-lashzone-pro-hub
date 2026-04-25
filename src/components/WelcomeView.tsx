@@ -102,7 +102,7 @@ export default function WelcomeView({ onSelectAction }: { onSelectAction: (id: s
           <motion.div 
             key={i} 
             variants={itemVariants}
-            className="p-5 md:p-8 bg-white border border-brand-border-light rounded-2xl md:rounded-3xl shadow-brand-sm hover:shadow-brand-md transition-all group cursor-default"
+            className="p-5 md:p-8 bg-white border border-[rgba(155,93,229,0.22)] rounded-2xl md:rounded-3xl shadow-brand-sm hover:shadow-brand-md transition-all group cursor-default"
           >
             <div className="flex items-center justify-between mb-6">
               <div className={`p-4 rounded-2xl ${stat.bg} transition-transform group-hover:scale-110 duration-300`}>
@@ -122,7 +122,7 @@ export default function WelcomeView({ onSelectAction }: { onSelectAction: (id: s
           <h3 className="text-2xl font-serif font-bold text-brand-primary-dark tracking-tight">Module Library</h3>
           <div className="flex gap-3">
             {categories.map(cat => (
-              <button key={cat} className="px-5 py-2 text-[10px] font-black text-[#666] border border-brand-border-light bg-white rounded-full hover:border-brand-primary hover:text-brand-primary uppercase tracking-[0.2em] transition-all shadow-brand-sm">
+              <button key={cat} className="px-5 py-2 text-[10px] font-black text-[#666] border border-[rgba(155,93,229,0.22)] bg-white rounded-full hover:border-[#9B5DE5] hover:text-[#9B5DE5] uppercase tracking-[0.2em] transition-all shadow-brand-sm">
                 {cat}
               </button>
             ))}
@@ -137,7 +137,7 @@ export default function WelcomeView({ onSelectAction }: { onSelectAction: (id: s
                 key={product.id}
                 variants={itemVariants}
                 onClick={() => onSelectAction(product.id)}
-                className="group p-5 md:p-8 bg-white border border-brand-border-light rounded-2xl md:rounded-3xl hover:border-brand-primary shadow-brand-sm hover:shadow-brand-lg transition-all cursor-pointer relative overflow-hidden"
+                className="group p-5 md:p-8 bg-white border border-[rgba(155,93,229,0.22)] rounded-2xl md:rounded-3xl hover:border-[#9B5DE5] shadow-brand-sm hover:shadow-brand-lg transition-all cursor-pointer relative overflow-hidden"
               >
                 <div className="flex items-start justify-between mb-8">
                   <div className="p-4 bg-brand-primary-light group-hover:bg-brand-primary group-hover:text-white rounded-2xl transition-all duration-300 border border-brand-primary/10">

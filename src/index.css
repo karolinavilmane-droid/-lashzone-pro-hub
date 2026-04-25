@@ -13,20 +13,20 @@
 
   /* ── Derived Variants ──────────────────────────────────────────────────── */
   --color-brand-primary-dark: #0D1856;
-  /* Sidebar — richer, deeper purple for stronger contrast vs white content */
-  --color-brand-primary-deep: #2D0A5E;
+  /* Sidebar — deep purple for strong contrast */
+  --color-brand-primary-deep: #2E0B57;
   --color-brand-primary-light: #FEF0E0;
 
   --color-brand-accent-dark: #7C3AED;
 
   --color-brand-ink-deep: #000000;
-  /* Near-pure white — removes the grey-lavender tint that washed everything out */
-  --color-brand-bg-soft: #F9F6FD;
+  /* Soft purple-tinted background for brand cohesion across the entire UI */
+  --color-brand-bg-soft: #F4EDFF;
 
   --color-brand-border: #F4A261;
   --color-brand-border-light: rgba(244, 162, 97, 0.20);
 
-  /* ── Elevation — stronger so cards visibly lift off the white surface ──── */
+  /* ── Elevation — stronger so cards visibly lift off the surface ──────── */
   --shadow-brand-sm:
     0 1px 4px rgba(45, 10, 94, 0.10),
     0 4px 14px rgba(45, 10, 94, 0.08);

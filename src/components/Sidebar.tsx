@@ -42,7 +42,7 @@ export default function Sidebar({ selectedId, onSelect, onHome }: SidebarProps) 
         }}
         className={`w-full text-left px-4 py-3.5 rounded-xl transition-all duration-250 flex items-center gap-3.5 group relative overflow-hidden ${
           isActive
-            ? 'bg-white/[0.22] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_4px_20px_-4px_rgba(0,0,0,0.30)]'
+            ? 'bg-[#9B5DE5]/20 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.10),0_4px_20px_-4px_rgba(0,0,0,0.30)]'
             : 'hover:bg-white/[0.10] text-white/85 hover:text-white'
         }`}
       >
@@ -80,7 +80,7 @@ export default function Sidebar({ selectedId, onSelect, onHome }: SidebarProps) 
   const SidebarContent = ({ isMobile = false }: { isMobile?: boolean }) => (
     <div className="flex flex-col h-full bg-brand-primary-deep text-white">
       {/* Branding */}
-      <div className="px-8 pt-8 pb-7" style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
+      <div className="px-8 pt-8 pb-7" style={{ borderBottom: '1px solid rgba(155,93,229,0.15)' }}>
         <div
           className="flex items-center justify-center cursor-pointer group"
           onClick={() => { onHome(); if (isMobile) setIsOpen(false); }}
@@ -90,12 +90,12 @@ export default function Sidebar({ selectedId, onSelect, onHome }: SidebarProps) 
               <img
                 src="/logo.jpg"
                 alt={BRANDING.businessName}
-                className="h-14 w-auto object-contain"
+                className="h-16 w-auto object-contain"
                 referrerPolicy="no-referrer"
               />
             </div>
           ) : (
-            <div className="w-12 h-12 rounded-xl bg-brand-accent flex items-center justify-center text-white font-bold text-xl shadow-lg">
+            <div className="w-14 h-14 rounded-xl bg-brand-accent flex items-center justify-center text-white font-bold text-2xl shadow-lg">
               {BRANDING.logoPrefix}
             </div>
           )}

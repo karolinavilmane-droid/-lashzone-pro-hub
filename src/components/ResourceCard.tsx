@@ -46,44 +46,46 @@ export default function ResourceCard({ resource }: { resource: Resource }) {
     if (resource.paymentLink) window.open(resource.paymentLink, '_blank');
   };
 
-  // ── Badge ────────────────────────────────────────────────────────────────────
-  // Free: solid purple  |  Granted: solid orange  |  Locked: clear warm-gray
+  // ── Badge ──────────────────────────────────────────────────────────────────
   const accessBadge = resource.isFree
-    ? { label: 'Free',           cls: 'bg-brand-primary text-white' }
+    ? { label: 'Free',           cls: 'bg-[#F4A261] text-white' }
     : isUnlocked
-      ? { label: 'Access Granted', cls: 'bg-brand-accent text-white' }
+      ? { label: 'Access Granted', cls: 'bg-[#9B5DE5] text-white' }
       : { label: 'Locked',         cls: 'bg-[#EDE8F5] text-[#5B3E8A]' };
 
-  // ── Card surface ──────────────────────────────────────────────────────────────
+  // ── Card surface ────────────────────────────────────────────────────────────
   const cardCls = isLocked
     ? [
         'bg-white',
-        'border border-[rgba(155,93,229,0.15)]',
+        'border border-[rgba(155,93,229,0.18)]',
         'shadow-[0_1px_4px_rgba(42,27,74,0.06)]',
-        'hover:shadow-[0_4px_18px_rgba(42,27,74,0.10)]',
-        'hover:border-[rgba(155,93,229,0.30)]',
+        'hover:shadow-[0_4px_18px_rgba(42,27,74,0.12)]',
+        'hover:border-[rgba(155,93,229,0.35)]',
       ].join(' ')
     : [
         'bg-white',
-        'border border-[rgba(155,93,229,0.28)]',
+        'border border-[rgba(155,93,229,0.35)]',
         'shadow-brand-sm',
         'hover:shadow-brand-md',
-        'hover:border-[rgba(155,93,229,0.50)]',
+        'hover:border-[rgba(155,93,229,0.55)]',
         'hover:-translate-y-0.5',
       ].join(' ');
 
-  // ── Icon box ──────────────────────────────────────────────────────────────────
+  // ── Icon box ──────────────────────────────────────────────────────────────
   const iconBg = resource.isFree
-    ? 'rgba(244,162,97,0.15)'
+    ? 'rgba(244,162,97,0.18)'
     : isUnlocked
-      ? 'rgba(155,93,229,0.15)'
-      : 'rgba(155,93,229,0.08)';
+      ? 'rgba(155,93,229,0.18)'
+      : 'rgba(155,93,229,0.10)';
 
   const iconColor = resource.isFree
-    ? 'text-brand-primary'
+    ? 'text-[#F4A261]'
     : isUnlocked
-      ? 'text-brand-accent'
+      ? 'text-[#9B5DE5]'
       : 'text-[#7B5EA7]';
+
+  // Shared button styles for consistency
+  const btnBase = 'flex-1 py-2.5 rounded-xl font-semibold text-[13px] flex items-center justify-center gap-2 select-none';
 
   return (
     <div className={`rounded-xl p-6 flex flex-col h-full transition-all duration-200 ${cardCls}`}>
@@ -118,24 +120,22 @@ export default function ResourceCard({ resource }: { resource: Resource }) {
         <div className="flex flex-col sm:flex-row gap-2.5">
           {isLocked ? (
             <>
-              {/* ── Sign In to Unlock / Unlock Access ──────────────────────────
-                  Orange gradient — brand accent, signals "action required".
-                  Lifts on hover, deepens on active press.                      */}
+              {/* SIGN IN TO UNLOCK — Bright orange gradient */}
               <button
                 onClick={handleUnlock}
-                className="flex-1 py-2.5 rounded-xl font-semibold text-[13px] flex items-center justify-center gap-2 text-white select-none"
+                className={`${btnBase} text-white`}
                 style={{
-                  background: 'linear-gradient(135deg, #FF8050 0%, #E8612A 100%)',
-                  boxShadow: 'var(--shadow-brand-accent)',
+                  background: 'linear-gradient(135deg, #F4A261 0%, #E8842A 100%)',
+                  boxShadow: '0 4px 14px rgba(244,162,97,0.45), 0 1px 4px rgba(244,162,97,0.25)',
                   transition: 'transform 160ms ease, box-shadow 160ms ease, filter 160ms ease',
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.boxShadow = 'var(--shadow-brand-accent-hover)';
+                  e.currentTarget.style.boxShadow = '0 6px 20px rgba(244,162,97,0.55), 0 2px 8px rgba(244,162,97,0.28)';
                   e.currentTarget.style.transform = 'translateY(-1px)';
                   e.currentTarget.style.filter = 'brightness(1.06)';
                 }}
                 onMouseLeave={e => {
-                  e.currentTarget.style.boxShadow = 'var(--shadow-brand-accent)';
+                  e.currentTarget.style.boxShadow = '0 4px 14px rgba(244,162,97,0.45), 0 1px 4px rgba(244,162,97,0.25)';
                   e.currentTarget.style.transform = 'translateY(0)';
                   e.currentTarget.style.filter = 'brightness(1)';
                 }}
@@ -152,18 +152,14 @@ export default function ResourceCard({ resource }: { resource: Resource }) {
                 {!isLoggedIn ? 'Sign In to Unlock' : 'Unlock Access'}
               </button>
 
-              {/* ── Preview (locked, preview available) ────────────────────────
-                  Outlined secondary — same family as the unlocked preview.
-                  ── Preview (fully disabled) ───────────────────────────────────
-                  Visibly inactive: reduced opacity, lock icon, no-cursor.
-                  Still has a border so it reads as a button slot, not empty.   */}
+              {/* PREVIEW — Disabled or available, both purple-based */}
               {previewLocked ? (
                 <div
-                  className="flex-1 py-2.5 rounded-xl text-[13px] flex items-center justify-center gap-2 select-none cursor-not-allowed"
+                  className={`${btnBase} cursor-not-allowed`}
                   style={{
-                    border: '1.5px solid rgba(155,93,229,0.25)',
-                    color: 'rgba(107,79,160,0.55)',
-                    background: 'rgba(155,93,229,0.06)',
+                    border: '1.5px solid rgba(155,93,229,0.20)',
+                    color: 'rgba(107,79,160,0.50)',
+                    background: 'rgba(155,93,229,0.04)',
                   }}
                 >
                   <Lock size={13} strokeWidth={2} />
@@ -172,22 +168,22 @@ export default function ResourceCard({ resource }: { resource: Resource }) {
               ) : (
                 <button
                   onClick={handlePreview}
-                  className="flex-1 py-2.5 rounded-xl font-semibold text-[13px] flex items-center justify-center gap-2 select-none"
+                  className={`${btnBase}`}
                   style={{
-                    border: '1.5px solid rgba(154,126,212,0.40)',
-                    color: '#6B4FA0',
+                    border: '1.5px solid #9B5DE5',
+                    color: '#7C3AED',
                     background: '#fff',
                     transition: 'transform 160ms ease, box-shadow 160ms ease, background 160ms ease, border-color 160ms ease',
                   }}
                   onMouseEnter={e => {
-                    e.currentTarget.style.background = '#EDE6FF';
-                    e.currentTarget.style.borderColor = 'rgba(154,126,212,0.65)';
+                    e.currentTarget.style.background = '#F4EDFF';
+                    e.currentTarget.style.borderColor = '#7C3AED';
                     e.currentTarget.style.transform = 'translateY(-1px)';
-                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(154,126,212,0.18)';
+                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(155,93,229,0.20)';
                   }}
                   onMouseLeave={e => {
                     e.currentTarget.style.background = '#fff';
-                    e.currentTarget.style.borderColor = 'rgba(154,126,212,0.40)';
+                    e.currentTarget.style.borderColor = '#9B5DE5';
                     e.currentTarget.style.transform = 'translateY(0)';
                     e.currentTarget.style.boxShadow = 'none';
                   }}
@@ -204,25 +200,22 @@ export default function ResourceCard({ resource }: { resource: Resource }) {
             </>
           ) : (
             <>
-              {/* ── Download ───────────────────────────────────────────────────
-                  Primary CTA. Purple gradient, coloured shadow.
-                  Lifts +1px on hover, shadow deepens, brightens slightly.
-                  Presses to scale(0.975) for tactile feedback.                 */}
+              {/* DOWNLOAD — Purple gradient */}
               <button
                 onClick={handleDownload}
-                className="flex-1 py-2.5 rounded-xl font-semibold text-[13px] flex items-center justify-center gap-2 text-white select-none"
+                className={`${btnBase} text-white`}
                 style={{
-                  background: 'linear-gradient(135deg, #9A7ED4 0%, #6B4FA0 100%)',
-                  boxShadow: 'var(--shadow-brand-primary)',
+                  background: 'linear-gradient(135deg, #9B5DE5 0%, #7C3AED 100%)',
+                  boxShadow: '0 4px 14px rgba(155,93,229,0.40), 0 1px 4px rgba(155,93,229,0.22)',
                   transition: 'transform 160ms ease, box-shadow 160ms ease, filter 160ms ease',
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.boxShadow = 'var(--shadow-brand-primary-hover)';
+                  e.currentTarget.style.boxShadow = '0 6px 20px rgba(155,93,229,0.52), 0 2px 8px rgba(155,93,229,0.28)';
                   e.currentTarget.style.transform = 'translateY(-1px)';
                   e.currentTarget.style.filter = 'brightness(1.08)';
                 }}
                 onMouseLeave={e => {
-                  e.currentTarget.style.boxShadow = 'var(--shadow-brand-primary)';
+                  e.currentTarget.style.boxShadow = '0 4px 14px rgba(155,93,229,0.40), 0 1px 4px rgba(155,93,229,0.22)';
                   e.currentTarget.style.transform = 'translateY(0)';
                   e.currentTarget.style.filter = 'brightness(1)';
                 }}
@@ -238,27 +231,25 @@ export default function ResourceCard({ resource }: { resource: Resource }) {
                 <Download size={14} strokeWidth={2.5} /> Download
               </button>
 
-              {/* ── Preview ────────────────────────────────────────────────────
-                  Secondary outlined. Visible 1.5px purple border, dark text.
-                  Fills to light lavender on hover, lifts +1px, border deepens. */}
+              {/* PREVIEW — Purple outlined */}
               <button
                 onClick={handlePreview}
-                className="flex-1 py-2.5 rounded-xl font-semibold text-[13px] flex items-center justify-center gap-2 select-none"
+                className={`${btnBase}`}
                 style={{
-                  border: '1.5px solid rgba(154,126,212,0.42)',
-                  color: '#6B4FA0',
+                  border: '1.5px solid #9B5DE5',
+                  color: '#7C3AED',
                   background: '#fff',
                   transition: 'transform 160ms ease, box-shadow 160ms ease, background 160ms ease, border-color 160ms ease',
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.background = '#EDE6FF';
-                  e.currentTarget.style.borderColor = 'rgba(154,126,212,0.68)';
+                  e.currentTarget.style.background = '#F4EDFF';
+                  e.currentTarget.style.borderColor = '#7C3AED';
                   e.currentTarget.style.transform = 'translateY(-1px)';
-                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(154,126,212,0.20)';
+                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(155,93,229,0.20)';
                 }}
                 onMouseLeave={e => {
                   e.currentTarget.style.background = '#fff';
-                  e.currentTarget.style.borderColor = 'rgba(154,126,212,0.42)';
+                  e.currentTarget.style.borderColor = '#9B5DE5';
                   e.currentTarget.style.transform = 'translateY(0)';
                   e.currentTarget.style.boxShadow = 'none';
                 }}

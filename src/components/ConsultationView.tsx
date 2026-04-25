@@ -11,7 +11,7 @@ export default function ConsultationView() {
   const paidCount = RESOURCES.filter(r => !r.isFree).length;
 
   return (
-    <div className="min-h-screen bg-brand-bg-soft">
+    <div className="min-h-screen bg-[#F4EDFF]">
       <div className="px-4 md:px-8 py-6 md:py-10 max-w-6xl mx-auto">
 
         {/* Heading */}

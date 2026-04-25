@@ -19,7 +19,7 @@ interface LayoutProps {
 
 export default function Layout({ children, selectedId, onSelect, onHome }: LayoutProps) {
   return (
-    <div className="flex min-h-screen bg-[#F9F6FD] text-brand-ink selection:bg-brand-primary/20 selection:text-brand-primary overflow-hidden">
+    <div className="flex min-h-screen bg-[#F4EDFF] text-brand-ink selection:bg-brand-primary/20 selection:text-brand-primary overflow-hidden">
       {/* Sidebar - Fixed Rail */}
       <Sidebar selectedId={selectedId || null} onSelect={onSelect || (() => {})} onHome={onHome || (() => {})} />
 
