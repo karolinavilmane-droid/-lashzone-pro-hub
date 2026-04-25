@@ -102,7 +102,7 @@ export default function WelcomeView({ onSelectAction }: { onSelectAction: (id: s
           <motion.div 
             key={i} 
             variants={itemVariants}
-            className="p-5 md:p-8 bg-white border border-[rgba(155,93,229,0.25)] rounded-2xl md:rounded-3xl shadow-brand-sm hover:shadow-brand-md transition-all group cursor-default"
+            className="p-5 md:p-8 bg-white border border-[rgba(155,93,229,0.28)] rounded-2xl md:rounded-3xl shadow-brand-sm hover:shadow-brand-md transition-all group cursor-default"
           >
             <div className="flex items-center justify-between mb-6">
               <div className={`p-4 rounded-2xl ${stat.bg} transition-transform group-hover:scale-110 duration-300`}>
@@ -137,7 +137,7 @@ export default function WelcomeView({ onSelectAction }: { onSelectAction: (id: s
                 key={product.id}
                 variants={itemVariants}
                 onClick={() => onSelectAction(product.id)}
-                className="group p-5 md:p-8 bg-white border border-[rgba(155,93,229,0.25)] rounded-2xl md:rounded-3xl hover:border-[#9B5DE5] shadow-brand-sm hover:shadow-brand-lg transition-all cursor-pointer relative overflow-hidden"
+                className="group p-5 md:p-8 bg-white border border-[rgba(155,93,229,0.28)] rounded-2xl md:rounded-3xl hover:border-[#9B5DE5] shadow-brand-sm hover:shadow-brand-lg transition-all cursor-pointer relative overflow-hidden"
               >
                 <div className="flex items-start justify-between mb-8">
                   <div className="p-4 bg-brand-primary-light group-hover:bg-brand-primary group-hover:text-white rounded-2xl transition-all duration-300 border border-brand-primary/10">

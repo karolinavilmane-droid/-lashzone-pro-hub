@@ -58,16 +58,16 @@ export default function ResourceCard({ resource }: { resource: Resource }) {
     ? [
         'bg-white',
         'border border-[rgba(155,93,229,0.22)]',
-        'shadow-[0_2px_8px_rgba(42,27,74,0.08)]',
-        'hover:shadow-[0_6px_24px_rgba(42,27,74,0.14)]',
+        'shadow-[0_2px_10px_rgba(42,27,74,0.10)]',
+        'hover:shadow-[0_8px_28px_rgba(42,27,74,0.16)]',
         'hover:border-[rgba(155,93,229,0.40)]',
       ].join(' ')
     : [
         'bg-white',
-        'border border-[rgba(155,93,229,0.38)]',
+        'border border-[rgba(155,93,229,0.40)]',
         'shadow-brand-sm',
-        'hover:shadow-[0_6px_24px_rgba(42,27,74,0.14)]',
-        'hover:border-[rgba(155,93,229,0.60)]',
+        'hover:shadow-[0_8px_28px_rgba(42,27,74,0.16)]',
+        'hover:border-[rgba(155,93,229,0.65)]',
         'hover:-translate-y-0.5',
       ].join(' ');
 
@@ -157,7 +157,7 @@ export default function ResourceCard({ resource }: { resource: Resource }) {
                 <div
                   className={`${btnBase} cursor-not-allowed`}
                   style={{
-                    border: '2px solid rgba(155,93,229,0.20)',
+                    border: '2px solid rgba(155,93,229,0.22)',
                     color: 'rgba(107,79,160,0.55)',
                     background: 'rgba(155,93,229,0.04)',
                   }}
@@ -170,17 +170,17 @@ export default function ResourceCard({ resource }: { resource: Resource }) {
                   onClick={handlePreview}
                   className={`${btnBase}`}
                   style={{
-                    border: '2px solid #9B5DE5',
-                    color: '#7C3AED',
-                    fontWeight: 600,
+                    border: '2.5px solid #9B5DE5',
+                    color: '#6B2FA0',
+                    fontWeight: 700,
                     background: '#fff',
                     transition: 'transform 160ms ease, box-shadow 160ms ease, background 160ms ease, border-color 160ms ease',
                   }}
                   onMouseEnter={e => {
-                    e.currentTarget.style.background = '#EDE0FF';
+                    e.currentTarget.style.background = '#E8D8FF';
                     e.currentTarget.style.borderColor = '#7C3AED';
                     e.currentTarget.style.transform = 'translateY(-1px)';
-                    e.currentTarget.style.boxShadow = '0 4px 14px rgba(155,93,229,0.25)';
+                    e.currentTarget.style.boxShadow = '0 4px 16px rgba(155,93,229,0.28)';
                   }}
                   onMouseLeave={e => {
                     e.currentTarget.style.background = '#fff';
@@ -237,17 +237,17 @@ export default function ResourceCard({ resource }: { resource: Resource }) {
                 onClick={handlePreview}
                 className={`${btnBase}`}
                 style={{
-                  border: '2px solid #9B5DE5',
-                  color: '#7C3AED',
-                  fontWeight: 600,
+                  border: '2.5px solid #9B5DE5',
+                  color: '#6B2FA0',
+                  fontWeight: 700,
                   background: '#fff',
                   transition: 'transform 160ms ease, box-shadow 160ms ease, background 160ms ease, border-color 160ms ease',
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.background = '#EDE0FF';
+                  e.currentTarget.style.background = '#E8D8FF';
                   e.currentTarget.style.borderColor = '#7C3AED';
                   e.currentTarget.style.transform = 'translateY(-1px)';
-                  e.currentTarget.style.boxShadow = '0 4px 14px rgba(155,93,229,0.25)';
+                  e.currentTarget.style.boxShadow = '0 4px 16px rgba(155,93,229,0.28)';
                 }}
                 onMouseLeave={e => {
                   e.currentTarget.style.background = '#fff';

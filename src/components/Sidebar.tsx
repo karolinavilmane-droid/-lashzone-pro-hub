@@ -80,17 +80,17 @@ export default function Sidebar({ selectedId, onSelect, onHome }: SidebarProps) 
   const SidebarContent = ({ isMobile = false }: { isMobile?: boolean }) => (
     <div className="flex flex-col h-full bg-brand-primary-deep text-white">
       {/* Branding */}
-      <div className="px-8 pt-8 pb-7" style={{ borderBottom: '1px solid rgba(155,93,229,0.12)' }}>
+      <div className="px-8 pt-8 pb-7" style={{ borderBottom: '1px solid rgba(155,93,229,0.10)' }}>
         <div
           className="flex items-center justify-center cursor-pointer group"
           onClick={() => { onHome(); if (isMobile) setIsOpen(false); }}
         >
           {BRANDING.logoUrl ? (
-            <div className="group-hover:scale-105 transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]">
+            <div className="relative rounded-xl bg-gradient-to-b from-[rgba(255,255,255,0.08)] to-[rgba(255,255,255,0.02)] p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_4px_20px_rgba(0,0,0,0.30)] group-hover:scale-105 transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]">
               <img
                 src="/logo.jpg"
                 alt={BRANDING.businessName}
-                className="h-16 w-auto object-contain rounded-lg shadow-[0_4px_16px_rgba(0,0,0,0.25)]"
+                className="h-14 w-auto object-contain"
                 referrerPolicy="no-referrer"
               />
             </div>
